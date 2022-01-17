@@ -92,6 +92,7 @@ def load_data(filename):
 
             labels.append(1 if row['Revenue'] ==True else 0)
 
+    return (evidence, labels)
 
 
 def train_model(evidence, labels):
