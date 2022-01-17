@@ -90,9 +90,9 @@ def load_data(filename):
             1 if row['Weekend'] == True else 0
             ])
 
-            labels.append(1 if row['Revenue'] ==True else 0)
+            labels.append(1 if row['Revenue'] == True else 0)
 
-    return (evidence, labels)
+    return evidence, labels
 
 
 def train_model(evidence, labels):
@@ -133,7 +133,7 @@ def evaluate(labels, predictions):
     sensitivity = sensitivity / len(labels)
     specificity = specificity / len(labels)
 
-    return (sensitivity, specificity)
+    return sensitivity, specificity
 
 
 if __name__ == "__main__":
