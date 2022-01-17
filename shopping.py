@@ -130,8 +130,8 @@ def evaluate(labels, predictions):
             specificity += 1
 
     # Divide count of true positives/negatives by number of items evaluated
-    sensitivity = sensitivity / len(labels)
-    specificity = specificity / len(labels)
+    sensitivity = sensitivity / sum(labels)
+    specificity = specificity / (len(labels) - sum(labels))
 
     return sensitivity, specificity
 
