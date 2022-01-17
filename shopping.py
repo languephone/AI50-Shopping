@@ -59,7 +59,39 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
-    raise NotImplementedError
+
+    evidence = []
+    labels = []
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul', 'Aug', 'Sep',
+        'Oct', 'Nov', 'Dec']
+
+    with open('drive/MyDrive/Colab Notebooks/shopping.csv') as f:
+        reader = csv.DictReader(f)
+
+        for row in reader:
+            evidence.append([
+            int(row['Administrative']),
+            float(row['Administrative_Duration']),
+            int(row['Informational']),
+            int(row['Informational']),
+            float(row['Informational_Duration']),
+            int(row['ProductRelated']),
+            float(row['ProductRelated_Duration']),
+            float(row['BounceRates']),
+            float(row['ExitRates']),
+            float(row['PageValues']),
+            float(row['SpecialDay']),
+            months.index(row['Month']),
+            int(row['OperatingSystems']),
+            int(row['Browser']),
+            int(row['Region']),
+            int(row['TrafficType']),
+            1 if row['VisitorType'] == 'Returning_Visitor' else 0,
+            1 if row['Weekend'] == True else 0
+            ])
+
+            labels.append(1 if row['Revenue'] ==True else 0)
+
 
 
 def train_model(evidence, labels):
