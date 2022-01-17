@@ -65,7 +65,7 @@ def load_data(filename):
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul', 'Aug', 'Sep',
         'Oct', 'Nov', 'Dec']
 
-    with open('drive/MyDrive/Colab Notebooks/shopping.csv') as f:
+    with open(filename) as f:
         reader = csv.DictReader(f)
 
         for row in reader:
