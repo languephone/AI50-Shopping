@@ -87,10 +87,10 @@ def load_data(filename):
             int(row['Region']),
             int(row['TrafficType']),
             1 if row['VisitorType'] == 'Returning_Visitor' else 0,
-            1 if row['Weekend'] == True else 0
+            1 if row['Weekend'] == "TRUE" else 0
             ])
 
-            labels.append(1 if row['Revenue'] == True else 0)
+            labels.append(1 if row['Revenue'] == "TRUE" else 0)
 
     return evidence, labels
 
