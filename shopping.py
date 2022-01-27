@@ -73,7 +73,6 @@ def load_data(filename):
                 int(row['Administrative']),
                 float(row['Administrative_Duration']),
                 int(row['Informational']),
-                int(row['Informational']),
                 float(row['Informational_Duration']),
                 int(row['ProductRelated']),
                 float(row['ProductRelated_Duration']),
